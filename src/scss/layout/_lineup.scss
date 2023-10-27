@@ -1,0 +1,87 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as var;
+
+.lineup{
+    background-color: var.$rosa;
+    padding: 5rem 0;
+    h3,p{
+        text-align: center !important ;
+        color: var.$blanco;
+    
+    }
+}
+
+
+.dia{
+    text-transform: uppercase !important;
+    margin: 5rem;
+}
+
+.escenarios-contenedor{
+    
+    @include m.tablet {
+        @include m.grid(2)
+    }
+
+    p{
+        color: var.$negro;
+
+    }
+    .escenario{
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        @include m.tablet {
+            margin-bottom: 0;
+            
+        }
+        p{
+            &:after{
+                content: '';
+                display: block;
+                width: 20rem;
+                height: 10rem;
+                background-size: 15rem;
+                background-repeat: no-repeat;
+                background-position: center center;
+                margin: 2rem auto;
+
+            }
+        }
+    }
+
+}
+
+.edm .nombre-escenario:after{
+    background-image: url(../../../build/img/icono_edm.png);
+
+}
+
+.rock .nombre-escenario:after{
+    background-image: url(../../../build/img/icono_rock.png);
+
+}
+
+.calendario{
+    @include m.resetear-lista;
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+    }
+    span{
+        font-weight: 400;
+    }
+}
+
+.bg-amarillo{
+    background-color: var.$amarillo;
+    li:nth-child(odd){
+        background-color: darken(var.$amarillo,25%);
+    }
+}
+
+.bg-verde{
+    background-color: var.$verde;
+    li:nth-child(odd){
+        background-color: darken(var.$verde,10%);
+    }
+}
